@@ -84,9 +84,11 @@ CGFloat verticalSpace = 10;
     }];
     
     //Load note
-    Note *note = [[Model sharedModel] loadNote];
+    /*
+     Note *note = [[Model sharedModel] loadNote];
     self.titleTextField.text = note.title;
     self.detailTextView.text = note.detail;
+     */
 }
 
 #pragma mark: Saving
@@ -100,8 +102,8 @@ CGFloat verticalSpace = 10;
     }
 }
 -(void)saveNote {
-    Note *note = [[Note alloc] initWithTitle:self.titleTextField.text detail:self.detailTextView.text];
-    [[Model sharedModel] saveNote:note];
+    //Note *note = [[Note alloc] initWithTitle:self.titleTextField.text detail:self.detailTextView.text];
+    //[[Model sharedModel] saveNote:note];
 }
 -(void)noDataToSave {
     NSString *wheresTheProblem;

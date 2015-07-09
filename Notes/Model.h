@@ -7,10 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
-@class Note;
+@class Notes;
 
 @interface Model: NSObject
 + (Model *)sharedModel;
--(void)saveNote:(Note *)note;
--(Note *)loadNote;
+//-(void)saveNote:(Note *)note;
+//-(Note *)loadNote;
+@property (copy, nonatomic) Notes *notes;
 @end

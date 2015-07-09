@@ -19,7 +19,7 @@
     });
     return modelSingleton;
 }
--(void)saveNote:(Note *)note {
+/*-(void)saveNote:(Note *)note {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [defaults setObject:note.title forKey:@"title"];
     [defaults setObject:note.detail forKey:@"detail"];
@@ -37,5 +37,5 @@
     }
     return note;
 
-}
+}*/
 @end
