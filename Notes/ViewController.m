@@ -56,8 +56,13 @@ CGFloat verticalSpace = 10;
     self.titleLabel.text = @"Title:";
     [self.titleLabel sizeToFit];
     
-    //Set up Masonry constraints
     
+    //Customize detailTextView
+    self.detailTextView.layer.borderWidth = 1.0;
+    self.detailTextView.layer.borderColor = [[UIColor colorWithRed:204.0/255.0 green:204.0/255.0 blue:204.0/255.0 alpha:1.0] CGColor];
+    self.detailTextView.layer.cornerRadius = 5.0;
+    
+    //Set up Masonry constraints
     [self.saveButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.right.equalTo(self.view.mas_right).with.offset(-horizontalMargin);
         make.top.equalTo(self.view.mas_top).offset(verticalMargin);
