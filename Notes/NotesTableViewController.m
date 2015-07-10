@@ -7,6 +7,7 @@
 //
 
 #import "NotesTableViewController.h"
+
 #import "Model.h"
 #import "Notes.h"
 #import "Note.h"
@@ -50,12 +51,11 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"note" forIndexPath:indexPath];
-    
+
     Note *note = [[Model sharedModel].notes getNoteAtIndex:indexPath.row];
     
     // Configure the cell...
     cell.textLabel.text = note.title;
-    cell.detailTextLabel.text = note.detail;
     
     return cell;
 }
