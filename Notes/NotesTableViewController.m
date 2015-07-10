@@ -7,10 +7,13 @@
 //
 
 #import "NotesTableViewController.h"
+#import "ViewController.h"
 
 #import "Model.h"
 #import "Notes.h"
 #import "Note.h"
+#import "NoteTableViewCell.h"
+
 
 @interface NotesTableViewController ()
 
@@ -27,7 +30,7 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
-    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"note"];
+    [self.tableView registerClass:[NoteTableViewCell class] forCellReuseIdentifier:@"note"];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -50,12 +53,13 @@
 #pragma mark - Table view delegate
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"note" forIndexPath:indexPath];
+    NoteTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"note" forIndexPath:indexPath];
 
     Note *note = [[Model sharedModel].notes getNoteAtIndex:indexPath.row];
     
     // Configure the cell...
     cell.textLabel.text = note.title;
+    cell.detailTextLabel.text = note.detail;
     
     return cell;
 }

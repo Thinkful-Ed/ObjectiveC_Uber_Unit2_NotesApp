@@ -18,6 +18,7 @@
 		181F3F7F1B4868EE00CAB180 /* Note.m in Sources */ = {isa = PBXBuildFile; fileRef = 181F3F7E1B4868EE00CAB180 /* Note.m */; };
 		18E36E451B4F177000CB16D5 /* Notes.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E36E441B4F177000CB16D5 /* Notes.m */; };
 		18E36E491B50059B00CB16D5 /* NotesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E36E481B50059B00CB16D5 /* NotesTableViewController.m */; };
+		18E36E501B50354C00CB16D5 /* NoteTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E36E4F1B50354C00CB16D5 /* NoteTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,8 @@
 		18E36E441B4F177000CB16D5 /* Notes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Notes.m; sourceTree = "<group>"; };
 		18E36E471B50059B00CB16D5 /* NotesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotesTableViewController.h; sourceTree = "<group>"; };
 		18E36E481B50059B00CB16D5 /* NotesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotesTableViewController.m; sourceTree = "<group>"; };
+		18E36E4E1B50354C00CB16D5 /* NoteTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoteTableViewCell.h; sourceTree = "<group>"; };
+		18E36E4F1B50354C00CB16D5 /* NoteTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoteTableViewCell.m; sourceTree = "<group>"; };
 		54AA037E5E027171B75854B4 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C048CAFEC301C024C0FBDDD /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		9FD57401DB8875A7D995CB4F /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -163,6 +166,8 @@
 				181F3F5C1B4840B400CAB180 /* ViewController.m */,
 				18E36E471B50059B00CB16D5 /* NotesTableViewController.h */,
 				18E36E481B50059B00CB16D5 /* NotesTableViewController.m */,
+				18E36E4E1B50354C00CB16D5 /* NoteTableViewCell.h */,
+				18E36E4F1B50354C00CB16D5 /* NoteTableViewCell.m */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -317,6 +322,7 @@
 				18E36E491B50059B00CB16D5 /* NotesTableViewController.m in Sources */,
 				181F3F571B4840B400CAB180 /* main.m in Sources */,
 				181F3F7C1B4864E400CAB180 /* Model.m in Sources */,
+				18E36E501B50354C00CB16D5 /* NoteTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
