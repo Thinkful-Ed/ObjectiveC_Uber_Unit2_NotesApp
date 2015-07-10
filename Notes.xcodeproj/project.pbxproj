@@ -112,6 +112,7 @@
 				181F3F581B4840B400CAB180 /* AppDelegate.h */,
 				181F3F591B4840B400CAB180 /* AppDelegate.m */,
 				18E36E461B4F214E00CB16D5 /* Model */,
+				18E36E511B50545800CB16D5 /* View */,
 				18E36E4A1B5005A200CB16D5 /* ViewController */,
 				181F3F611B4840B400CAB180 /* Images.xcassets */,
 				181F3F631B4840B400CAB180 /* LaunchScreen.xib */,
@@ -166,10 +167,17 @@
 				181F3F5C1B4840B400CAB180 /* ViewController.m */,
 				18E36E471B50059B00CB16D5 /* NotesTableViewController.h */,
 				18E36E481B50059B00CB16D5 /* NotesTableViewController.m */,
+			);
+			name = ViewController;
+			sourceTree = "<group>";
+		};
+		18E36E511B50545800CB16D5 /* View */ = {
+			isa = PBXGroup;
+			children = (
 				18E36E4E1B50354C00CB16D5 /* NoteTableViewCell.h */,
 				18E36E4F1B50354C00CB16D5 /* NoteTableViewCell.m */,
 			);
-			name = ViewController;
+			name = View;
 			sourceTree = "<group>";
 		};
 		FFF479908F410AE5FBBB014B /* Pods */ = {

@@ -33,6 +33,11 @@
     [self.tableView registerClass:[NoteTableViewCell class] forCellReuseIdentifier:@"note"];
 }
 
+-(void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self.tableView reloadData];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -62,6 +67,12 @@
     cell.detailTextLabel.text = note.detail;
     
     return cell;
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    Note *note = [[Model sharedModel].notes getNoteAtIndex:indexPath.row];
+    ViewController *detailViewController = [[ViewController alloc] initWithNote:note];
+    [self.navigationController pushViewController:detailViewController animated:YES];
 }
 
 /*

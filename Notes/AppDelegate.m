@@ -21,8 +21,10 @@
     self.window.backgroundColor = [UIColor whiteColor];
     
     NotesTableViewController *notesTableViewController = [[NotesTableViewController alloc] init];
-    self.window.rootViewController = notesTableViewController;
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:notesTableViewController];
+    self.window.rootViewController = navigationController;
     [self.window makeKeyAndVisible];
+    
     return YES;
 }
 

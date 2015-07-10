@@ -17,6 +17,8 @@
 @property (strong, nonatomic) UITextField *titleTextField;
 @property (strong, nonatomic) UITextView *detailTextView;
 
+@property (strong, nonatomic) Note *note;
+
 @end
 
 @implementation ViewController
@@ -26,8 +28,20 @@ CGFloat verticalMargin = 20;
 CGFloat horizontalSpace = 10;
 CGFloat verticalSpace = 10;
 
+-(id)initWithNote:(Note *)note {
+    self = [super init];
+    if (!self) {
+        return nil; //something went wrong!
+    }
+    self.note = note;
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.edgesForExtendedLayout = UIRectEdgeNone;
+    self.view.backgroundColor = [UIColor whiteColor];
     
     //Instantiate objects
     self.saveButton = [UIButton new];
@@ -84,11 +98,11 @@ CGFloat verticalSpace = 10;
     }];
     
     //Load note
-    /*
-     Note *note = [[Model sharedModel] loadNote];
-    self.titleTextField.text = note.title;
-    self.detailTextView.text = note.detail;
-     */
+    if (self.note) {
+        self.titleTextField.text = self.note.title;
+        self.detailTextView.text = self.note.detail;
+    }
+
 }
 
 #pragma mark: Saving
@@ -102,8 +116,9 @@ CGFloat verticalSpace = 10;
     }
 }
 -(void)saveNote {
-    //Note *note = [[Note alloc] initWithTitle:self.titleTextField.text detail:self.detailTextView.text];
-    //[[Model sharedModel] saveNote:note];
+    self.note.title = self.titleTextField.text;
+    self.note.detail = self.detailTextView.text;
+    [self.navigationController popViewControllerAnimated:YES];
 }
 -(void)noDataToSave {
     NSString *wheresTheProblem;
