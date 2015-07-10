@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "ViewController.h"
+#import "NotesTableViewController.h"
 
 @interface AppDelegate ()
 
@@ -20,8 +20,8 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor whiteColor];
     
-    ViewController *viewController = [[ViewController alloc] init];
-    self.window.rootViewController = viewController;
+    NotesTableViewController *notesTableViewController = [[NotesTableViewController alloc] init];
+    self.window.rootViewController = notesTableViewController;
     [self.window makeKeyAndVisible];
     return YES;
 }
