@@ -42,6 +42,7 @@ CGFloat verticalSpace = 10;
     
     self.edgesForExtendedLayout = UIRectEdgeNone;
     self.view.backgroundColor = [UIColor whiteColor];
+    self.title = @"Edit note";
     
     //Instantiate objects
     self.saveButton = [UIButton new];
