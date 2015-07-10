@@ -8,6 +8,7 @@
 
 #import "Model.h"
 #import "Note.h"
+#import "Notes.h"
 
 @implementation Model
 + (Model *)sharedModel
@@ -18,6 +19,16 @@
         modelSingleton = [[Model alloc] init];
     });
     return modelSingleton;
+}
+-(Notes *)notes {
+    if (!_notes) {
+        _notes = [[Notes alloc] initWithNotes:@[
+                                                [[Note alloc] initWithTitle:@"First note" detail:@"Here's some detail"],
+                                                [[Note alloc] initWithTitle:@"Second note" detail:@"Here's some more detail"]
+                                                ]
+                  ];
+    }
+    return _notes;
 }
 /*-(void)saveNote:(Note *)note {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
