@@ -12,7 +12,6 @@
 #import "Model.h"
 
 @interface ViewController ()
-@property (strong, nonatomic) UIButton *saveButton;
 @property (strong, nonatomic) UILabel *titleLabel;
 @property (strong, nonatomic) UITextField *titleTextField;
 @property (strong, nonatomic) UITextView *detailTextView;
@@ -44,24 +43,18 @@ CGFloat verticalSpace = 10;
     self.view.backgroundColor = [UIColor whiteColor];
     self.title = @"Edit note";
     
+    //Add save bar button
+    self.navigationItem.rightBarButtonItem  = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(tappedSave:)];
+    
     //Instantiate objects
-    self.saveButton = [UIButton new];
     self.titleLabel = [UILabel new];
     self.titleTextField = [UITextField new];
     self.detailTextView = [UITextView new];
     
     //Add to view
-    [self.view addSubview:self.saveButton];
     [self.view addSubview:self.titleLabel];
     [self.view addSubview:self.titleTextField];
     [self.view addSubview:self.detailTextView];
-    
-    //Customize saveButton
-    [self.saveButton setTitle:@"Save" forState:UIControlStateNormal];
-    [self.saveButton sizeToFit];
-    [self.saveButton setTitleColor:[UIColor colorWithRed:1.0/255.0 green:122.0/255.0 blue:255.0/255.0 alpha:1.0] forState:UIControlStateNormal];
-    [self.saveButton setTitleColor:[UIColor colorWithRed:1.0/255.0 green:122.0/255.0 blue:255.0/255.0 alpha:0.5] forState:UIControlStateHighlighted];
-    [self.saveButton addTarget:self action:@selector(tappedSave:) forControlEvents:UIControlEventTouchUpInside];
     
     //Customize titleTextField
     self.titleTextField.borderStyle = UITextBorderStyleRoundedRect;
@@ -77,18 +70,14 @@ CGFloat verticalSpace = 10;
     self.detailTextView.layer.cornerRadius = 5.0;
     
     //Set up Masonry constraints
-    [self.saveButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.right.equalTo(self.view.mas_right).with.offset(-horizontalMargin);
-        make.top.equalTo(self.view.mas_top).offset(verticalMargin);
-    }];
     [self.titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.view.mas_left).with.offset(horizontalMargin);
-        make.baseline.equalTo(self.saveButton.mas_baseline);
+        make.baseline.equalTo(self.titleTextField.mas_baseline);
     }];
     [self.titleTextField mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.titleLabel.mas_right).with.offset(horizontalSpace);
-        make.right.equalTo(self.saveButton.mas_left).with.offset(-horizontalSpace);
-        make.baseline.equalTo(self.saveButton.mas_baseline);
+        make.right.equalTo(self.view.mas_right).with.offset(-horizontalMargin);
+        make.top.equalTo(self.view.mas_top).offset(verticalMargin);
         make.width.greaterThanOrEqualTo(@10);
     }];
     [self.detailTextView mas_makeConstraints:^(MASConstraintMaker *make) {

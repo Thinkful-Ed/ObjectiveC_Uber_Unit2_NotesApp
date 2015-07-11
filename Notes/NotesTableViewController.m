@@ -16,6 +16,7 @@
 
 
 @interface NotesTableViewController ()
+@property (strong, nonatomic) Note *noteToAdd;
 @end
 
 @implementation NotesTableViewController
@@ -29,13 +30,27 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
+    self.navigationItem.rightBarButtonItem  = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addNote:)];
+    self.title = @"Notes";
     
     [self.tableView registerClass:[NoteTableViewCell class] forCellReuseIdentifier:@"note"];
 }
 
 -(void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    
+    if (self.noteToAdd && ![self.noteToAdd isBlank]) {
+        [[Model sharedModel].notes addNote:self.noteToAdd];
+    }
+    self.noteToAdd = nil;
+    
     [self.tableView reloadData];
+}
+
+-(void)addNote:(id)sender {
+    self.noteToAdd = [[Note alloc] initWithTitle:@"" detail:@""];
+    ViewController *detailViewController = [[ViewController alloc] initWithNote:self.noteToAdd];
+    [self.navigationController pushViewController:detailViewController animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {

@@ -11,5 +11,7 @@
 @interface Note : NSObject
 @property (strong, nonatomic) NSString *title;
 @property (strong, nonatomic) NSString *detail;
+
 -(id)initWithTitle:(NSString *)title detail:(NSString *)detail;
+-(BOOL)isBlank;
 @end
