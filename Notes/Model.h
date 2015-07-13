@@ -14,4 +14,5 @@
 //-(void)saveNote:(Note *)note;
 //-(Note *)loadNote;
 @property (copy, nonatomic) Notes *notes;
+-(void)saveNotes;
 @end
