@@ -22,19 +22,14 @@
 }
 -(Notes *)notes {
     if (!_notes) {
-/*        
- _notes = [[Notes alloc] initWithNotes:@[
-                                                [[Note alloc] initWithTitle:@"First note" detail:@"Here's some detail"],
-                                                [[Note alloc] initWithTitle:@"Second note" detail:@"Here's some more detail"]
-                                                ]
-                  ];
- */
         _notes = [[Notes alloc] initWithNotes:[self loadNotes]];
+        _notes.delegate = [Model sharedModel];
     }
     return _notes;
 }
 //Archive notes
 -(void)saveNotes {
+    NSLog(@"Saving");
     [NSKeyedArchiver archiveRootObject:self.notes.notes toFile:[self filePath]];
 }
 //Unarchive notes
@@ -50,23 +45,8 @@
     NSString *documentsDirectoryPath = [paths objectAtIndex:0];
     return ([documentsDirectoryPath stringByAppendingPathComponent:@"noteData2"]);
 }
-/*-(void)saveNote:(Note *)note {
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    [defaults setObject:note.title forKey:@"title"];
-    [defaults setObject:note.detail forKey:@"detail"];
-    [defaults synchronize];
+#pragma mark - NotesDelegate
+-(void)updated {
+    [self saveNotes];
 }
--(Note *)loadNote {
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    NSString *title = [defaults stringForKey:@"title"];
-    NSString *detail = [defaults stringForKey:@"detail"];
-    Note *note;
-    if (title && detail) {
-        note = [[Note alloc] initWithTitle:title detail:detail];
-    } else {
-        note = [[Note alloc] initWithTitle:@"" detail:@""];
-    }
-    return note;
-
-}*/
 @end

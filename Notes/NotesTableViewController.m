@@ -44,8 +44,6 @@
     }
     self.noteToAdd = nil;
     
-    [[Model sharedModel] saveNotes];
-    
     [self.tableView reloadData];
 }
 
@@ -106,7 +104,6 @@
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         // Delete the row from the data source
         [[Model sharedModel].notes deleteNoteAtIndex:indexPath.row];
-        [[Model sharedModel] saveNotes];
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
     }
 }
@@ -116,7 +113,6 @@
 // Override to support rearranging the table view.
 - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
     [[Model sharedModel].notes moveFromIndex:fromIndexPath.row toIndex:toIndexPath.row];
-    [[Model sharedModel] saveNotes];
 }
 
 

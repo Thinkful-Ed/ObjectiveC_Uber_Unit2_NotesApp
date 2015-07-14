@@ -7,9 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
-@class Notes;
+//@class Notes;
+#import "Notes.h"
 
-@interface Model: NSObject
+@interface Model: NSObject<NotesDelegate>
 + (Model *)sharedModel;
 //-(void)saveNote:(Note *)note;
 //-(Note *)loadNote;

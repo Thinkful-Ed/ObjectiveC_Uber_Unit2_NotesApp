@@ -106,9 +106,7 @@ CGFloat verticalSpace = 10;
     }
 }
 -(void)saveNote {
-    self.note.title = self.titleTextField.text;
-    self.note.detail = self.detailTextView.text;
-    
+    [self.note setTitle:self.titleTextField.text detail:self.detailTextView.text];
     [self.navigationController popViewControllerAnimated:YES];
 }
 -(void)noDataToSave {

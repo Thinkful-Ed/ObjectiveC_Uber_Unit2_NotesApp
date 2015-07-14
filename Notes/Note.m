@@ -34,4 +34,11 @@
     self.detail    = [coder decodeObjectForKey:@"detail"];
     return self;
 }
+
+//
+-(void)setTitle:(NSString *)title detail:(NSString *)detail {
+    _title = title;
+    _detail = detail;
+    [self.delegate updated];
+}
 @end

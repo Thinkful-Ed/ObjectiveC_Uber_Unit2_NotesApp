@@ -7,16 +7,22 @@
 //
 
 #import <Foundation/Foundation.h>
-@class Note;
+//@class Note;
+#import "Note.h"
 
-@interface Notes : NSObject
+@protocol NotesDelegate
+-(void)updated;
+@end
+
+@interface Notes : NSObject<NoteDelegate>
 @property (strong, nonatomic) NSMutableArray *notes;
+@property (weak, nonatomic) id<NotesDelegate> delegate;
 
 -(id)initWithNotes:(NSArray *)notes;
 -(NSInteger)count;
 -(Note *)getNoteAtIndex:(NSInteger)index;
 -(void)addNote:(Note *)note;
--(Note *)deleteNoteAtIndex:(NSInteger)index;
+-(void)deleteNoteAtIndex:(NSInteger)index;
 -(void)moveFromIndex:(NSInteger)fromIndex toIndex:(NSInteger)toIndex;
 
 @end
