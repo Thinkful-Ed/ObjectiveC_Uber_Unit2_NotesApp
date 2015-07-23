@@ -16,6 +16,7 @@
 		181F3F711B4840B400CAB180 /* NotesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 181F3F701B4840B400CAB180 /* NotesTests.m */; };
 		181F3F7C1B4864E400CAB180 /* Model.m in Sources */ = {isa = PBXBuildFile; fileRef = 181F3F7B1B4864E400CAB180 /* Model.m */; };
 		181F3F7F1B4868EE00CAB180 /* Note.m in Sources */ = {isa = PBXBuildFile; fileRef = 181F3F7E1B4868EE00CAB180 /* Note.m */; };
+		183431D11B61792000F1CD2E /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 183431D01B61792000F1CD2E /* MapViewController.m */; };
 		18E36E451B4F177000CB16D5 /* Notes.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E36E441B4F177000CB16D5 /* Notes.m */; };
 		18E36E491B50059B00CB16D5 /* NotesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E36E481B50059B00CB16D5 /* NotesTableViewController.m */; };
 		18E36E501B50354C00CB16D5 /* NoteTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E36E4F1B50354C00CB16D5 /* NoteTableViewCell.m */; };
@@ -48,6 +49,8 @@
 		181F3F7B1B4864E400CAB180 /* Model.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Model.m; sourceTree = "<group>"; };
 		181F3F7D1B4868EE00CAB180 /* Note.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Note.h; sourceTree = "<group>"; };
 		181F3F7E1B4868EE00CAB180 /* Note.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Note.m; sourceTree = "<group>"; };
+		183431CF1B61792000F1CD2E /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
+		183431D01B61792000F1CD2E /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
 		18E36E431B4F177000CB16D5 /* Notes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Notes.h; sourceTree = "<group>"; };
 		18E36E441B4F177000CB16D5 /* Notes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Notes.m; sourceTree = "<group>"; };
 		18E36E471B50059B00CB16D5 /* NotesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotesTableViewController.h; sourceTree = "<group>"; };
@@ -167,6 +170,8 @@
 				181F3F5C1B4840B400CAB180 /* ViewController.m */,
 				18E36E471B50059B00CB16D5 /* NotesTableViewController.h */,
 				18E36E481B50059B00CB16D5 /* NotesTableViewController.m */,
+				183431CF1B61792000F1CD2E /* MapViewController.h */,
+				183431D01B61792000F1CD2E /* MapViewController.m */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -326,6 +331,7 @@
 				181F3F7F1B4868EE00CAB180 /* Note.m in Sources */,
 				181F3F5D1B4840B400CAB180 /* ViewController.m in Sources */,
 				181F3F5A1B4840B400CAB180 /* AppDelegate.m in Sources */,
+				183431D11B61792000F1CD2E /* MapViewController.m in Sources */,
 				18E36E451B4F177000CB16D5 /* Notes.m in Sources */,
 				18E36E491B50059B00CB16D5 /* NotesTableViewController.m in Sources */,
 				181F3F571B4840B400CAB180 /* main.m in Sources */,

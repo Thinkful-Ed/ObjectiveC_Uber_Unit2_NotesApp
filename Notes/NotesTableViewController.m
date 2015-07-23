@@ -21,6 +21,17 @@
 
 @implementation NotesTableViewController
 
+-(id)init {
+    self = [super init];
+    if (!self) {
+        return nil; //something went wrong!
+    }
+    self.title = @"Notes";
+    
+    self.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Notes" image:[UIImage imageNamed:@"Note"] tag:0];
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -31,7 +42,6 @@
     self.navigationItem.leftBarButtonItem = self.editButtonItem;
     
     self.navigationItem.rightBarButtonItem  = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addNote:)];
-    self.title = @"Notes";
     
     [self.tableView registerClass:[NoteTableViewCell class] forCellReuseIdentifier:@"note"];
 }

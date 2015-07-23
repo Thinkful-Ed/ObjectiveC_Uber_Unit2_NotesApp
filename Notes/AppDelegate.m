@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "NotesTableViewController.h"
+#import "MapViewController.h"
 
 @interface AppDelegate ()
 
@@ -20,9 +21,19 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor whiteColor];
     
+    UITabBarController *tabBarController = [[UITabBarController alloc] init];
+    
     NotesTableViewController *notesTableViewController = [[NotesTableViewController alloc] init];
-    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:notesTableViewController];
-    self.window.rootViewController = navigationController;
+    UINavigationController *navigationController1 = [[UINavigationController alloc] initWithRootViewController:notesTableViewController];
+    
+    MapViewController *mapViewController = [[MapViewController alloc] init];
+    //mapViewController.title = @"Maps";
+    //mapViewController.tabBarItem.image = [UIImage imageNamed:@""];
+    UINavigationController *navigationController2 = [[UINavigationController alloc] initWithRootViewController:mapViewController];
+    
+    tabBarController.viewControllers = @[navigationController1,navigationController2];
+    
+    self.window.rootViewController = tabBarController;
     [self.window makeKeyAndVisible];
     
     return YES;
