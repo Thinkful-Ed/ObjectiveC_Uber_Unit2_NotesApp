@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <CoreLocation/CoreLocation.h>
 
 @protocol NoteDelegate
 -(void)updated;
@@ -15,6 +16,7 @@
 @interface Note : NSObject
 @property (strong, nonatomic) NSString *title;
 @property (strong, nonatomic) NSString *detail;
+@property (assign, nonatomic) CLLocationCoordinate2D coordinate;
 @property (weak, nonatomic) id<NoteDelegate> delegate;
 
 -(id)initWithTitle:(NSString *)title detail:(NSString *)detail;

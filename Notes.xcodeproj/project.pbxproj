@@ -17,6 +17,7 @@
 		181F3F7C1B4864E400CAB180 /* Model.m in Sources */ = {isa = PBXBuildFile; fileRef = 181F3F7B1B4864E400CAB180 /* Model.m */; };
 		181F3F7F1B4868EE00CAB180 /* Note.m in Sources */ = {isa = PBXBuildFile; fileRef = 181F3F7E1B4868EE00CAB180 /* Note.m */; };
 		183431D11B61792000F1CD2E /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 183431D01B61792000F1CD2E /* MapViewController.m */; };
+		183431D31B617C0D00F1CD2E /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 183431D21B617C0D00F1CD2E /* CoreLocation.framework */; };
 		18E36E451B4F177000CB16D5 /* Notes.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E36E441B4F177000CB16D5 /* Notes.m */; };
 		18E36E491B50059B00CB16D5 /* NotesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E36E481B50059B00CB16D5 /* NotesTableViewController.m */; };
 		18E36E501B50354C00CB16D5 /* NoteTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E36E4F1B50354C00CB16D5 /* NoteTableViewCell.m */; };
@@ -51,6 +52,7 @@
 		181F3F7E1B4868EE00CAB180 /* Note.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Note.m; sourceTree = "<group>"; };
 		183431CF1B61792000F1CD2E /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
 		183431D01B61792000F1CD2E /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
+		183431D21B617C0D00F1CD2E /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		18E36E431B4F177000CB16D5 /* Notes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Notes.h; sourceTree = "<group>"; };
 		18E36E441B4F177000CB16D5 /* Notes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Notes.m; sourceTree = "<group>"; };
 		18E36E471B50059B00CB16D5 /* NotesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotesTableViewController.h; sourceTree = "<group>"; };
@@ -67,6 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				183431D31B617C0D00F1CD2E /* CoreLocation.framework in Frameworks */,
 				0F710B883A923BEEB02FD4C5 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -84,6 +87,7 @@
 		14E046133E650D3AA920ACE0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				183431D21B617C0D00F1CD2E /* CoreLocation.framework */,
 				54AA037E5E027171B75854B4 /* libPods.a */,
 			);
 			name = Frameworks;

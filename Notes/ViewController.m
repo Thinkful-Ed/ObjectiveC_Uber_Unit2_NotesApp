@@ -18,6 +18,8 @@
 
 @property (strong, nonatomic) Note *note;
 
+@property (strong, nonatomic) CLLocationManager *locationManager;
+
 @end
 
 @implementation ViewController
@@ -92,8 +94,39 @@ CGFloat verticalSpace = 10;
         self.titleTextField.text = self.note.title;
         self.detailTextView.text = self.note.detail;
     }
+    // if we're creating a new note, get location
+    if ([self.note isBlank]) {
+        [self startUpdatingUserLocations];
+    }
 
 }
+
+#pragma mark Core Location
+
+- (void)startUpdatingUserLocations {
+    if (![CLLocationManager locationServicesEnabled]) {
+        return;
+    }
+    self.locationManager = [[CLLocationManager alloc] init];
+    
+    // Check for iOS 8. Without this guard the code will crash with "unknown selector" on iOS 7.
+    if ([self.locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)]) {
+        [self.locationManager requestWhenInUseAuthorization];
+    }
+    self.locationManager.delegate = self;
+    
+    [self.locationManager startUpdatingLocation];
+}
+
+#pragma mark CLLocationManagerDelegate
+
+- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
+    
+    self.note.coordinate = self.locationManager.location.coordinate;
+    [self.locationManager stopUpdatingLocation];
+    
+}
+
 
 #pragma mark: Saving
 -(void) tappedSave:(UIButton*)sender {
@@ -150,6 +183,7 @@ CGFloat verticalSpace = 10;
 }
 -(void)viewDidDisappear:(BOOL)animated {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
+    [self.locationManager stopUpdatingLocation];
 }
 - (void)keyboardWasShown:(NSNotification*)notification {
     CGFloat keyboardHeight = [[[notification userInfo] objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size.height;
