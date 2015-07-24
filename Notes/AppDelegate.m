@@ -27,8 +27,7 @@
     UINavigationController *navigationController1 = [[UINavigationController alloc] initWithRootViewController:notesTableViewController];
     
     MapViewController *mapViewController = [[MapViewController alloc] init];
-    //mapViewController.title = @"Maps";
-    //mapViewController.tabBarItem.image = [UIImage imageNamed:@""];
+
     UINavigationController *navigationController2 = [[UINavigationController alloc] initWithRootViewController:mapViewController];
     
     tabBarController.viewControllers = @[navigationController1,navigationController2];

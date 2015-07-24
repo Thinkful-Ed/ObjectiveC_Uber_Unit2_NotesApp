@@ -32,10 +32,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-//    CGRect fullScreenBounds = [[UIScreen mainScreen] bounds];
     self.mapView = [[MKMapView alloc] init];
     [self.view addSubview:self.mapView];
     self.mapView.delegate=self;
+    
+
+    
+    
     
     //Set up Masonry constraints
     [self.mapView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -90,6 +93,16 @@
             //Customize the callout
             UIButton* rightButton = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
             pinView.rightCalloutAccessoryView = rightButton;
+            
+            
+            UIImage *uberBadge = [UIImage imageNamed:@"UberBadge"];
+            UIButton *leftButton = [UIButton buttonWithType:UIButtonTypeCustom];
+            [leftButton setImage:uberBadge forState:UIControlStateNormal];
+
+            leftButton.frame = CGRectMake(0, 0, uberBadge.size.width, uberBadge.size.height);
+            leftButton.tag = 1;
+            pinView.leftCalloutAccessoryView = leftButton;
+            
         } else {
             pinView.annotation = annotation;
         }
@@ -107,9 +120,20 @@
         }
         Note *note = [[Model sharedModel].notes getNoteAtIndex:index];
         
-        ViewController *detailViewController = [[ViewController alloc] initWithNote:note];
-        [self.navigationController pushViewController:detailViewController animated:YES];
-        
+        if (control.tag == 1) {
+            if ([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:@"uber://"]]) {
+                // Do something awesome - the app is installed! Launch App.
+                NSString *url = [NSString stringWithFormat:@"uber://?action=setPickup&pickup=my_location&&dropoff[latitude]=%f&dropoff[longitude]=%f",note.coordinate.latitude,note.coordinate.longitude];
+                [[UIApplication sharedApplication] openURL:[NSURL URLWithString:url]];
+            }
+            else {
+                // No Uber app! Open Mobile Website.
+                [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://m.uber.com"]];
+            }
+        } else {
+            ViewController *detailViewController = [[ViewController alloc] initWithNote:note];
+            [self.navigationController pushViewController:detailViewController animated:YES];
+        }
     }
 }
 
